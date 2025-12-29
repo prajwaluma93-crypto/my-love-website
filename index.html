@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #ff758c, #ff7eb3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page { display: none; }
+.page.active { display: block; }
+
+.heart {
+    font-size: 100px;
+    cursor: pointer;
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+button {
+    padding: 12px 25px;
+    background: white;
+    color: #ff4d6d;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #ffe6ec;
+}
+
+.big-love {
+    font-size: 60px;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px pink; }
+    to { text-shadow: 0 0 30px white; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+    <div class="heart" onclick="goNext()">❤️</div>
+    <h2>Click My Heart</h2>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <h1>🎉 Happy New Year My Love 🎉</h1>
+    <p>
+        From the moment you came into my life, everything started feeling complete.<br>
+        You turned my silence into laughter and my worries into peace.<br>
+        I don’t want a perfect life — I want you in my life.<br>
+        I choose you this year and every year after.<br>
+        I want to spend the rest of my life loving you ❤️
+    </p>
+    <button onclick="goNext()">Next ➝</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+    <div class="big-love">I LOVE YOU ♾️</div>
+    <p>Forever & Always ❤️</p>
+</div>
+
+<script>
+let current = 1;
+function goNext() {
+    document.getElementById(`page${current}`).classList.remove("active");
+    current++;
+    document.getElementById(`page${current}`).classList.add("active");
+}
+</script>
+
+</body>
+</html>
